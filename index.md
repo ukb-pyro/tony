@@ -28,50 +28,50 @@ Done. I added **color-coded collapsible headers** (using colored-square emojis s
 <summary><strong>🟨 1. Tactical (Unplanned)</strong></summary>
 
 *Flash Decisions in Chaos** – Mid-service, Bourdain thrived in environments where the next 30 seconds could swing between disaster and genius.
-***Opportunistic Leaps** – Accepting a trip to Tokyo with minimal notice, agreeing to an unfamiliar food on camera, or walking into a stranger’s kitchen in a war zone.
-***Unrehearsed Truth-Telling** – His famous essays and interviews often contained unfiltered opinions, dropped into the public sphere without PR sanding down the edges.
-***The “Yes, and…” Reflex** – Bourdain operated like an improv actor in the world—see something, do it, own it.
+- **Opportunistic Leaps** – Accepting a trip to Tokyo with minimal notice, agreeing to an unfamiliar food on camera, or walking into a stranger’s kitchen in a war zone.
+- **Unrehearsed Truth-Telling** – His famous essays and interviews often contained unfiltered opinions, dropped into the public sphere without PR sanding down the edges.
+- **The “Yes, and…” Reflex** – Bourdain operated like an improv actor in the world—see something, do it, own it.
 
 </details>
 
 <details>
 <summary><strong>🟧 2. Informational (Ritualistic)</strong></summary>
 
-***Kitchen Mise en Place** – Knife laid just so, towels folded, oil bottle where muscle memory finds it—ritual as survival mechanism in professional cooking.
-***Cultural Repetition** – Returning to certain meals and rituals around the globe, like noodles in Hanoi, to anchor himself in the familiar while exploring the foreign.
-***Storytelling Cadence** – His shows carried a rhythm—arrival, immersion, reflection—mirroring the way chefs prepare, cook, and plate.
-***Cooks’ Lore** – Internalized oral histories of kitchens: superstitions, “rules” for prep, and unspoken hierarchies.
+- **Kitchen Mise en Place** – Knife laid just so, towels folded, oil bottle where muscle memory finds it—ritual as survival mechanism in professional cooking.
+- **Cultural Repetition** – Returning to certain meals and rituals around the globe, like noodles in Hanoi, to anchor himself in the familiar while exploring the foreign.
+- **Storytelling Cadence** – His shows carried a rhythm—arrival, immersion, reflection—mirroring the way chefs prepare, cook, and plate.
+- **Cooks’ Lore** – Internalized oral histories of kitchens: superstitions, “rules” for prep, and unspoken hierarchies.
 
 </details>
 
 <details>
 <summary><strong>🟥 3. Strategic (Planned)</strong></summary>
 
-***Career Pivoting** – Transition from back-of-house anonymity to literary breakout (*Kitchen Confidential*) was deliberate once the opportunity appeared.
-***Media Evolution** – Carefully chose to move from *A Cook’s Tour* to *No Reservations* to *Parts Unknown*, each expanding his cultural and political range.
-***Persona Management** – Maintained the “pirate chef” identity while subtly shifting into elder statesman of culinary diplomacy.
-***Location Selection** – Countries chosen for filming were strategic—mixing audience appeal, personal curiosity, and the chance to tell underrepresented stories.
+- **Career Pivoting** – Transition from back-of-house anonymity to literary breakout (*Kitchen Confidential*) was deliberate once the opportunity appeared.
+- **Media Evolution** – Carefully chose to move from *A Cook’s Tour* to *No Reservations* to *Parts Unknown*, each expanding his cultural and political range.
+- **Persona Management** – Maintained the “pirate chef” identity while subtly shifting into elder statesman of culinary diplomacy.
+- **Location Selection** – Countries chosen for filming were strategic—mixing audience appeal, personal curiosity, and the chance to tell underrepresented stories.
 
 </details>
 
 <details>
 <summary><strong>🟩 4. Operational (Daily Grind, Splicing All Above)</strong></summary>
 
-***Writing Discipline** – Even with constant travel, he wrote like a working journalist—deadlines met, drafts revised, voice consistent.
-***Constant Travel Loop** – Airports, hotel rooms, local contacts, shoots, interviews, meals—repeat, all stitched with improvisation when plans fell apart.
-***Hybridization** – A day might start with a pre-planned shoot, get interrupted by an unplanned market discovery, and end with late-night drinking rituals with locals.
-***Sustained Curiosity** – Maintained daily habit of asking new questions—about a dish, a person, a city—even when physically exhausted.
+- **Writing Discipline** – Even with constant travel, he wrote like a working journalist—deadlines met, drafts revised, voice consistent.
+- **Constant Travel Loop** – Airports, hotel rooms, local contacts, shoots, interviews, meals—repeat, all stitched with improvisation when plans fell apart.
+- **Hybridization** – A day might start with a pre-planned shoot, get interrupted by an unplanned market discovery, and end with late-night drinking rituals with locals.
+- **Sustained Curiosity** – Maintained daily habit of asking new questions—about a dish, a person, a city—even when physically exhausted.
 
 </details>
 
 <details>
 <summary><strong>🟦 5. Existential (Mortality as System Constraint)</strong></summary>
 
-***Physical Mortality** – Bourdain’s own life ended abruptly in 2018, underscoring the fragility of the systems he moved through—media, hospitality, and personal health.
-***Biological Clock of a Chef** – He understood the finite stamina of a body in kitchens, the eventual breakdown from years of abuse—caffeine, alcohol, late nights.
-***Cultural Ephemerality** – Many of the traditions he documented were already vanishing; he operated with urgency to capture them before they disappeared.
-***Narrative Finite Arc** – His storylines were always about impermanence—meals are eaten, conversations fade, moments are unrepeatable.
-***Computational Analogy** – Like a system with a fixed maximum runtime, he ran at full capacity knowing the clock couldn’t be stopped, only used well.
+- **Physical Mortality** – Bourdain’s own life ended abruptly in 2018, underscoring the fragility of the systems he moved through—media, hospitality, and personal health.
+- **Biological Clock of a Chef** – He understood the finite stamina of a body in kitchens, the eventual breakdown from years of abuse—caffeine, alcohol, late nights.
+- **Cultural Ephemerality** – Many of the traditions he documented were already vanishing; he operated with urgency to capture them before they disappeared.
+- **Narrative Finite Arc** – His storylines were always about impermanence—meals are eaten, conversations fade, moments are unrepeatable.
+- **Computational Analogy** – Like a system with a fixed maximum runtime, he ran at full capacity knowing the clock couldn’t be stopped, only used well.
 
 </details>
 
@@ -185,13 +185,13 @@ Done. I added **color-coded collapsible headers** (using colored-square emojis s
 
 # C — Why It’s Virtually Impossible to Beat Bourdain
 
-***Timing & medium** – He hit TV when long-form travel food storytelling was new, budgets were real, and global access was opening up—but before social media saturated everything. One voice could still become *the* voice.
-***Writer first, chef second** – The prose (*Kitchen Confidential* → *Parts Unknown* voiceovers) gave the shows literary bones. Most hosts cook; he *narrated the human condition*.
-***Zero Point Zero craft** – Cinematography, sound, and pacing were documentary-grade. It wasn’t “food TV”; it was journalism with dinner.
-***Radical empathy** – He made episodes *about people, politics, and place*—the food was a bridge. That made the work age like reportage, not like a restaurant list.
-***Cultural passport** – His credibility opened doors (from war zones to tiny homes) that are now harder to enter or film with the same candor.
-***Shared monoculture** – Fewer platforms = bigger, deeper imprint. Today’s fragmented audiences make “surpass him” in impact almost a category error.
-***Myth + mortality** – The story ended in a way that froze his influence in amber. You can match *quality*; you can’t surpass *legend*.
+- **Timing & medium** – He hit TV when long-form travel food storytelling was new, budgets were real, and global access was opening up—but before social media saturated everything. One voice could still become *the* voice.
+- **Writer first, chef second** – The prose (*Kitchen Confidential* → *Parts Unknown* voiceovers) gave the shows literary bones. Most hosts cook; he *narrated the human condition*.
+- **Zero Point Zero craft** – Cinematography, sound, and pacing were documentary-grade. It wasn’t “food TV”; it was journalism with dinner.
+- **Radical empathy** – He made episodes *about people, politics, and place*—the food was a bridge. That made the work age like reportage, not like a restaurant list.
+- **Cultural passport** – His credibility opened doors (from war zones to tiny homes) that are now harder to enter or film with the same candor.
+- **Shared monoculture** – Fewer platforms = bigger, deeper imprint. Today’s fragmented audiences make “surpass him” in impact almost a category error.
+- **Myth + mortality** – The story ended in a way that froze his influence in amber. You can match *quality*; you can’t surpass *legend*.
 
 **Conclusion:**
 A future travel-chef can excel on craft, ethics, or audience—but beating Bourdain on **zeitgeist + reach + literary voice + trust**? That’s like trying to out-Hemingway Hemingway.
