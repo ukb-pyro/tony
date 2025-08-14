@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Anthony Bourdain Dossier</title>
     <style>
+        /* === Base === */
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: 'Georgia','Times New Roman',serif;
             line-height: 1.6;
             max-width: 900px;
             margin: 0 auto;
@@ -14,14 +15,12 @@
             background-color: #1a1a1a;
             color: #e0e0e0;
         }
-        
         .container {
-            background: linear-gradient(135deg, #2c2c2c 0%, #1e1e1e 100%);
+            background: linear-gradient(135deg,#2c2c2c 0%,#1e1e1e 100%);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
-        
         h1 {
             color: #ff6b35;
             border-bottom: 3px solid #ff6b35;
@@ -29,289 +28,245 @@
             font-size: 2.2em;
             margin-bottom: 30px;
         }
-        
         h2 {
             color: #4a9eff;
             font-size: 1.6em;
             margin-top: 40px;
             margin-bottom: 20px;
         }
-        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg,transparent 0%,#ff6b35 50%,transparent 100%);
+            margin: 40px 0;
+        }
+        strong { color: #ffd93d; }
+        em { color: #4a9eff; font-style: normal; font-weight: 500; }
+
+        /* === TOC === */
         .toc {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255,255,255,0.05);
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 40px;
         }
-        
-        .toc h3 {
-            color: #ffd93d;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        
-        .toc ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .toc li {
-            margin: 8px 0;
-            padding-left: 20px;
-        }
-        
-        .toc a {
-            color: #e0e0e0;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .toc a:hover {
-            color: #ff6b35;
-        }
-        
-        .section {
-            margin-bottom: 50px;
-        }
-        
+        .toc h3 { color: #ffd93d; margin: 0 0 15px 0; }
+        .toc ul { list-style: none; padding-left: 0; }
+        .toc li { margin: 8px 0; padding-left: 20px; }
+        .toc a { color: #e0e0e0; text-decoration: none; transition: color .3s; }
+        .toc a:hover { color: #ff6b35; }
+
+        /* === Collapsibles === */
+        .section { margin-bottom: 50px; }
         .collapsible {
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-            margin: 15px 0;
-            border-radius: 8px;
-            overflow: hidden;
-            border-left: 4px solid;
-            transition: all 0.3s ease;
+            background: linear-gradient(90deg,rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.05) 100%);
+            margin: 15px 0; border-radius: 8px; overflow: hidden; border-left: 4px solid; transition: all .3s ease;
         }
-        
-        .collapsible:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-        }
-        
+        .collapsible:hover { transform: translateX(5px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
         .tactical { border-left-color: #ffd93d; }
         .informational { border-left-color: #ff8c42; }
         .strategic { border-left-color: #ff4757; }
         .operational { border-left-color: #2ed573; }
         .existential { border-left-color: #3742fa; }
-        
         .collapsible-header {
-            padding: 15px 20px;
-            cursor: pointer;
-            user-select: none;
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            font-size: 1.1em;
+            padding: 15px 20px; cursor: pointer; user-select: none; display: flex; align-items: center; font-weight: bold; font-size: 1.1em;
         }
-        
-        .color-indicator {
-            width: 16px;
-            height: 16px;
-            margin-right: 12px;
-            border-radius: 3px;
-        }
-        
+        .color-indicator { width: 16px; height: 16px; margin-right: 12px; border-radius: 3px; }
         .tactical .color-indicator { background-color: #ffd93d; }
         .informational .color-indicator { background-color: #ff8c42; }
         .strategic .color-indicator { background-color: #ff4757; }
         .operational .color-indicator { background-color: #2ed573; }
         .existential .color-indicator { background-color: #3742fa; }
-        
-        .collapsible-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        
-        .collapsible-content.active {
-            max-height: 1000px;
-        }
-        
-        .collapsible-inner {
-            padding: 20px;
-        }
-        
-        .collapsible-inner p {
-            margin: 0 0 15px 0;
-        }
-        
-        .collapsible-inner ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        
-        .collapsible-inner li {
-            margin: 8px 0;
-        }
-        
+        .collapsible-content { max-height: 0; overflow: hidden; transition: max-height .3s ease-out; }
+        .collapsible-content.active { max-height: 1000px; }
+        .collapsible-inner { padding: 20px; }
+        .collapsible-inner ul { margin: 10px 0; padding-left: 20px; }
+        .collapsible-inner li { margin: 8px 0; }
         .json-block {
-            background: #000;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            overflow-x: auto;
-            margin: 15px 0;
-            border-left: 3px solid #4a9eff;
+            background: #000; padding: 15px; border-radius: 5px;
+            font-family: 'Courier New',monospace; font-size: .9em; overflow-x: auto; margin: 15px 0; border-left: 3px solid #4a9eff;
         }
-        
+
         .conclusion {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(74, 158, 255, 0.1) 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 30px;
+            background: linear-gradient(135deg,rgba(255,107,53,.1) 0%,rgba(74,158,255,.1) 100%);
+            padding: 25px; border-radius: 10px; margin-top: 30px;
         }
-        
-        .conclusion h3 {
-            color: #ff6b35;
-            margin-top: 0;
+        .conclusion h3 { color: #ff6b35; margin-top: 0; }
+
+        /* === Ratings Matrix (Section D) === */
+        .ratings-controls {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: center; margin: 10px 0 20px;
         }
-        
-        hr {
-            border: none;
-            height: 2px;
-            background: linear-gradient(90deg, transparent 0%, #ff6b35 50%, transparent 100%);
-            margin: 40px 0;
+        .select, .btn {
+            background: #2b2b2b; color: #e0e0e0; border: 1px solid #444; border-radius: 8px; padding: 10px 12px;
         }
-        
-        strong {
-            color: #ffd93d;
+        .btn { cursor: pointer; transition: transform .1s ease, box-shadow .2s ease; }
+        .btn:hover { box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+        .btn:active { transform: translateY(1px); }
+
+        .ratings-card {
+            background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+            border: 1px solid #333; border-radius: 12px; padding: 18px; margin: 14px 0;
         }
-        
-        em {
-            color: #4a9eff;
-            font-style: normal;
-            font-weight: 500;
+        .ratings-card h3 { margin: 0 0 10px 0; color: #ffd93d; font-size: 1.1em; }
+        .metric-row {
+            display: grid; grid-template-columns: 140px 1fr 70px 90px; gap: 10px; align-items: center;
+            padding: 8px 0; border-bottom: 1px dashed #333;
+        }
+        .metric-row:last-child { border-bottom: none; }
+        .metric-name { color: #9fd0ff; }
+        input[type="range"] { width: 100%; }
+        .value-pill {
+            text-align: center; background: #00000055; border: 1px solid #444; padding: 6px 8px; border-radius: 8px; font-variant-numeric: tabular-nums;
+        }
+        .stars { letter-spacing: 2px; font-size: 1.05em; }
+        .avg-line {
+            margin-top: 10px; display: flex; justify-content: space-between; font-weight: bold; color: #ff8c42;
+        }
+        .matrix-summary {
+            margin-top: 18px; background: #141414; border: 1px solid #333; border-radius: 10px; padding: 14px;
+        }
+        .summary-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+        .summary-item { background: #222; border: 1px solid #333; border-radius: 8px; padding: 10px; text-align: center; }
+        .summary-item .label { color: #9fb0a6; font-size: .85em; display: block; margin-bottom: 4px; }
+        .summary-item .num { font-size: 1.2em; color: #ffd93d; }
+
+        .export-box {
+            background: #0e0e0e; border: 1px solid #333; border-radius: 8px; padding: 10px; margin-top: 14px;
+            font-family: 'Courier New', monospace; font-size: .9em; max-height: 240px; overflow: auto;
+        }
+        .helper {
+            font-size: .9em; color: #9fb0a6; margin-top: 6px;
+        }
+        .pill {
+            display: inline-block; padding: 2px 8px; border: 1px solid #444; border-radius: 999px; background: #00000055; margin-left: 8px; font-size: .8em; color: #cfd9d3;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Anthony Bourdain Dossier</h1>
-        
-        <div class="toc">
-            <h3>Table of Contents</h3>
-            <ul>
-                <li><a href="#section-a">A — Anthony Bourdain Dossier in Five Temporal Frames</a></li>
-                <li><a href="#section-b">B — Anthony Bourdain: FIDER Simulation Template</a></li>
-                <li><a href="#section-c">C — Why It's Virtually Impossible to Beat Bourdain</a></li>
-            </ul>
-        </div>
+<div class="container">
+    <h1>Anthony Bourdain Dossier</h1>
 
-        <hr>
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#section-a">A — Anthony Bourdain Dossier in Five Temporal Frames</a></li>
+            <li><a href="#section-b">B — Anthony Bourdain: FIDER Simulation Template</a></li>
+            <li><a href="#section-c">C — Why It's Virtually Impossible to Beat Bourdain</a></li>
+            <li><a href="#section-d">D — Ratings Matrix: Shows × Diet • Fitness • Games • Healthcare • Aging</a></li>
+        </ul>
+    </div>
 
-        <div id="section-a" class="section">
-            <h2>A — Anthony Bourdain Dossier in Five Temporal Frames</h2>
-            
-            <div class="collapsible tactical">
-                <div class="collapsible-header">
-                    <div class="color-indicator"></div>
-                    1. Tactical (Unplanned)
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <p><strong>Flash Decisions in Chaos</strong> — Mid-service, Bourdain thrived in environments where the next 30 seconds could swing between disaster and genius.</p>
-                        <ul>
-                            <li><strong>Opportunistic Leaps</strong> — Accepting a trip to Tokyo with minimal notice, agreeing to an unfamiliar food on camera, or walking into a stranger's kitchen in a war zone.</li>
-                            <li><strong>Unrehearsed Truth-Telling</strong> — His famous essays and interviews often contained unfiltered opinions, dropped into the public sphere without PR sanding down the edges.</li>
-                            <li><strong>The "Yes, and…" Reflex</strong> — Bourdain operated like an improv actor in the world—see something, do it, own it.</li>
-                        </ul>
-                    </div>
-                </div>
+    <hr/>
+
+    <!-- ===== SECTION A ===== -->
+    <div id="section-a" class="section">
+        <h2>A — Anthony Bourdain Dossier in Five Temporal Frames</h2>
+
+        <div class="collapsible tactical">
+            <div class="collapsible-header">
+                <div class="color-indicator"></div> 1. Tactical (Unplanned)
             </div>
-
-            <div class="collapsible informational">
-                <div class="collapsible-header">
-                    <div class="color-indicator"></div>
-                    2. Informational (Ritualistic)
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul>
-                            <li><strong>Kitchen Mise en Place</strong> — Knife laid just so, towels folded, oil bottle where muscle memory finds it—ritual as survival mechanism in professional cooking.</li>
-                            <li><strong>Cultural Repetition</strong> — Returning to certain meals and rituals around the globe, like noodles in Hanoi, to anchor himself in the familiar while exploring the foreign.</li>
-                            <li><strong>Storytelling Cadence</strong> — His shows carried a rhythm—arrival, immersion, reflection—mirroring the way chefs prepare, cook, and plate.</li>
-                            <li><strong>Cooks' Lore</strong> — Internalized oral histories of kitchens: superstitions, "rules" for prep, and unspoken hierarchies.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="collapsible strategic">
-                <div class="collapsible-header">
-                    <div class="color-indicator"></div>
-                    3. Strategic (Planned)
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul>
-                            <li><strong>Career Pivoting</strong> — Transition from back-of-house anonymity to literary breakout (Kitchen Confidential) was deliberate once the opportunity appeared.</li>
-                            <li><strong>Media Evolution</strong> — Carefully chose to move from A Cook's Tour to No Reservations to Parts Unknown, each expanding his cultural and political range.</li>
-                            <li><strong>Persona Management</strong> — Maintained the "pirate chef" identity while subtly shifting into elder statesman of culinary diplomacy.</li>
-                            <li><strong>Location Selection</strong> — Countries chosen for filming were strategic—mixing audience appeal, personal curiosity, and the chance to tell underrepresented stories.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="collapsible operational">
-                <div class="collapsible-header">
-                    <div class="color-indicator"></div>
-                    4. Operational (Daily Grind, Splicing All Above)
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul>
-                            <li><strong>Writing Discipline</strong> — Even with constant travel, he wrote like a working journalist—deadlines met, drafts revised, voice consistent.</li>
-                            <li><strong>Constant Travel Loop</strong> — Airports, hotel rooms, local contacts, shoots, interviews, meals—repeat, all stitched with improvisation when plans fell apart.</li>
-                            <li><strong>Hybridization</strong> — A day might start with a pre-planned shoot, get interrupted by an unplanned market discovery, and end with late-night drinking rituals with locals.</li>
-                            <li><strong>Sustained Curiosity</strong> — Maintained daily habit of asking new questions—about a dish, a person, a city—even when physically exhausted.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="collapsible existential">
-                <div class="collapsible-header">
-                    <div class="color-indicator"></div>
-                    5. Existential (Mortality as System Constraint)
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <ul>
-                            <li><strong>Physical Mortality</strong> — Bourdain's own life ended abruptly in 2018, underscoring the fragility of the systems he moved through—media, hospitality, and personal health.</li>
-                            <li><strong>Biological Clock of a Chef</strong> — He understood the finite stamina of a body in kitchens, the eventual breakdown from years of abuse—caffeine, alcohol, late nights.</li>
-                            <li><strong>Cultural Ephemerality</strong> — Many of the traditions he documented were already vanishing; he operated with urgency to capture them before they disappeared.</li>
-                            <li><strong>Narrative Finite Arc</strong> — His storylines were always about impermanence—meals are eaten, conversations fade, moments are unrepeatable.</li>
-                            <li><strong>Computational Analogy</strong> — Like a system with a fixed maximum runtime, he ran at full capacity knowing the clock couldn't be stopped, only used well.</li>
-                        </ul>
-                    </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>Flash Decisions in Chaos</strong> — Mid-service, Bourdain thrived in environments where the next 30 seconds could swing between disaster and genius.</p>
+                    <ul>
+                        <li><strong>Opportunistic Leaps</strong> — Accepting a trip to Tokyo with minimal notice, agreeing to an unfamiliar food on camera, or walking into a stranger's kitchen in a war zone.</li>
+                        <li><strong>Unrehearsed Truth-Telling</strong> — His famous essays and interviews often contained unfiltered opinions, dropped into the public sphere without PR sanding down the edges.</li>
+                        <li><strong>The "Yes, and…" Reflex</strong> — Bourdain operated like an improv actor in the world—see something, do it, own it.</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <hr>
-
-        <div id="section-b" class="section">
-            <h2>B — Anthony Bourdain: FIDER Simulation Template</h2>
-            
-            <div class="collapsible tactical">
-                <div class="collapsible-header">
-                    <div class="color-indicator"></div>
-                    1. Ukuvula – Parameters / Ingest
+        <div class="collapsible informational">
+            <div class="collapsible-header">
+                <div class="color-indicator"></div> 2. Informational (Ritualistic)
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <ul>
+                        <li><strong>Kitchen Mise en Place</strong> — Knife laid just so, towels folded, oil bottle where muscle memory finds it—ritual as survival mechanism in professional cooking.</li>
+                        <li><strong>Cultural Repetition</strong> — Returning to certain meals and rituals around the globe, like noodles in Hanoi, to anchor himself in the familiar while exploring the foreign.</li>
+                        <li><strong>Storytelling Cadence</strong> — His shows carried a rhythm—arrival, immersion, reflection—mirroring the way chefs prepare, cook, and plate.</li>
+                        <li><strong>Cooks' Lore</strong> — Internalized oral histories of kitchens: superstitions, "rules" for prep, and unspoken hierarchies.</li>
+                    </ul>
                 </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <p><strong>What raw inputs define the system?</strong></p>
-                        <ul>
-                            <li><strong>Cultural Ingredients</strong> — Cuisines, languages, rituals, street markets, historical contexts.</li>
-                            <li><strong>Persona Parameters</strong> — Pirate-chef ethos, curiosity, irreverence, authenticity index.</li>
-                            <li><strong>Environmental Constraints</strong> — Kitchen heat, war zones, budget limits, production schedules.</li>
-                            <li><strong>Temporal Frame Weights</strong> — Tactical spikes (chaos), Informational baselines (ritual), Strategic arcs (career pivots), Operational loops (daily grind), Existential decay (finite run-time).</li>
-                        </ul>
-                        
-                        <p><strong>Simulation Input Variables:</strong></p>
-                        <div class="json-block">{
+            </div>
+        </div>
+
+        <div class="collapsible strategic">
+            <div class="collapsible-header">
+                <div class="color-indicator"></div> 3. Strategic (Planned)
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <ul>
+                        <li><strong>Career Pivoting</strong> — Transition from back-of-house anonymity to literary breakout (<em>Kitchen Confidential</em>) was deliberate once the opportunity appeared.</li>
+                        <li><strong>Media Evolution</strong> — Carefully chose to move from <em>A Cook's Tour</em> to <em>No Reservations</em> to <em>Parts Unknown</em>, each expanding his cultural and political range.</li>
+                        <li><strong>Persona Management</strong> — Maintained the "pirate chef" identity while subtly shifting into elder statesman of culinary diplomacy.</li>
+                        <li><strong>Location Selection</strong> — Countries chosen for filming were strategic—mixing audience appeal, personal curiosity, and the chance to tell underrepresented stories.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapsible operational">
+            <div class="collapsible-header">
+                <div class="color-indicator"></div> 4. Operational (Daily Grind, Splicing All Above)
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <ul>
+                        <li><strong>Writing Discipline</strong> — Even with constant travel, he wrote like a working journalist—deadlines met, drafts revised, voice consistent.</li>
+                        <li><strong>Constant Travel Loop</strong> — Airports, hotel rooms, local contacts, shoots, interviews, meals—repeat, all stitched with improvisation when plans fell apart.</li>
+                        <li><strong>Hybridization</strong> — A day might start with a pre-planned shoot, get interrupted by an unplanned market discovery, and end with late-night drinking rituals with locals.</li>
+                        <li><strong>Sustained Curiosity</strong> — Maintained daily habit of asking new questions—about a dish, a person, a city—even when physically exhausted.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapsible existential">
+            <div class="collapsible-header">
+                <div class="color-indicator"></div> 5. Existential (Mortality as System Constraint)
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <ul>
+                        <li><strong>Physical Mortality</strong> — Bourdain's own life ended abruptly in 2018, underscoring the fragility of the systems he moved through—media, hospitality, and personal health.</li>
+                        <li><strong>Biological Clock of a Chef</strong> — He understood the finite stamina of a body in kitchens, the eventual breakdown from years of abuse—caffeine, alcohol, late nights.</li>
+                        <li><strong>Cultural Ephemerality</strong> — Many of the traditions he documented were already vanishing; he operated with urgency to capture them before they disappeared.</li>
+                        <li><strong>Narrative Finite Arc</strong> — His storylines were always about impermanence—meals are eaten, conversations fade, moments are unrepeatable.</li>
+                        <li><strong>Computational Analogy</strong> — Like a system with a fixed maximum runtime, he ran at full capacity knowing the clock couldn't be stopped, only used well.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+
+    <!-- ===== SECTION B ===== -->
+    <div id="section-b" class="section">
+        <h2>B — Anthony Bourdain: FIDER Simulation Template</h2>
+
+        <div class="collapsible tactical">
+            <div class="collapsible-header">
+                <div class="color-indicator"></div> 1. Ukuvula – Parameters / Ingest
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>What raw inputs define the system?</strong></p>
+                    <ul>
+                        <li><strong>Cultural Ingredients</strong> — Cuisines, languages, rituals, street markets, historical contexts.</li>
+                        <li><strong>Persona Parameters</strong> — Pirate-chef ethos, curiosity, irreverence, authenticity index.</li>
+                        <li><strong>Environmental Constraints</strong> — Kitchen heat, war zones, budget limits, production schedules.</li>
+                        <li><strong>Temporal Frame Weights</strong> — Tactical spikes, Informational baselines, Strategic arcs, Operational loops, Existential decay.</li>
+                    </ul>
+
+                    <p><strong>Simulation Input Variables:</strong></p>
+                    <div class="json-block">{
   "locations": ["Hanoi", "Beirut", "Tokyo", "Queens"],
   "chef_ethos": ["irreverent", "empathetic", "risk-tolerant"],
   "time_distribution": {
@@ -322,145 +277,363 @@
     "existential": 0.1
   }
 }</div>
-                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="collapsible informational">
-                <div class="collapsible-header">
-                    <div class="color-indicator"></div>
-                    2. Ukuzula – Agents / Fractalize
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <p><strong>Who moves through the system, and at what scale?</strong></p>
-                        <ul>
-                            <li><strong>Primary Agent</strong> — Anthony Bourdain archetype (drives curiosity + narrative tone).</li>
-                            <li><strong>Secondary Agents</strong> — Chefs, fixers, local guides, producers, random locals.</li>
-                            <li><strong>Nested Agents</strong> —
-                                <ul>
-                                    <li><em>Micro:</em> market vendors, sous chefs, dish-specific artisans.</li>
-                                    <li><em>Meso:</em> restaurant ecosystems, production crews.</li>
-                                    <li><em>Macro:</em> cultural diplomacy networks, media distribution channels.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <p><strong>Fractal rule:</strong> Every agent has its own temporal frame (Tactical → Existential) but scaled to their world.</p>
-                    </div>
+        <div class="collapsible informational">
+            <div class="collapsible-header">
+                <div class="color-indicator"></div> 2. Ukuzula – Agents / Fractalize
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>Who moves through the system, and at what scale?</strong></p>
+                    <ul>
+                        <li><strong>Primary Agent</strong> — Anthony Bourdain archetype (drives curiosity + narrative tone).</li>
+                        <li><strong>Secondary Agents</strong> — Chefs, fixers, local guides, producers, random locals.</li>
+                        <li><strong>Nested Agents</strong> —
+                            <ul>
+                                <li><em>Micro:</em> market vendors, sous chefs, dish-specific artisans.</li>
+                                <li><em>Meso:</em> restaurant ecosystems, production crews.</li>
+                                <li><em>Macro:</em> cultural diplomacy networks, media distribution channels.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>Fractal rule:</strong> Every agent has its own temporal frame (Tactical → Existential) but scaled to their world.</p>
                 </div>
             </div>
+        </div>
 
-            <div class="collapsible strategic">
-                <div class="collapsible-header">
-                    <div class="color-indicator"></div>
-                    3. Ukusoma – Spaces / Collide
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <p><strong>Where and how do agents interact?</strong></p>
-                        <ul>
-                            <li><strong>Kitchen Heat Map</strong> — High collision zone: speed, improvisation, danger.</li>
-                            <li><strong>Street Market Flow</strong> — Medium collision: trade, negotiation, sensory overload.</li>
-                            <li><strong>Political Borderlands</strong> — High stakes: risk of shutdown, confrontation, revelation.</li>
-                            <li><strong>Post-Service Bars</strong> — Informal collision: intimacy, truth-telling, alliances.</li>
-                        </ul>
-                        <p><strong>Collision dynamics:</strong></p>
-                        <ul>
-                            <li><em>Elastic Collisions</em> — Cultural exchange where both sides expand knowledge.</li>
-                            <li><em>Inelastic Collisions</em> — Moments that absorb energy—injury, burnout, cultural friction.</li>
-                        </ul>
-                    </div>
+        <div class="collapsible strategic">
+            <div class="collapsible-header">
+                <div class="color-indicator"></div> 3. Ukusoma – Spaces / Collide
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>Where and how do agents interact?</strong></p>
+                    <ul>
+                        <li><strong>Kitchen Heat Map</strong> — High collision zone: speed, improvisation, danger.</li>
+                        <li><strong>Street Market Flow</strong> — Medium collision: trade, negotiation, sensory overload.</li>
+                        <li><strong>Political Borderlands</strong> — High stakes: risk of shutdown, confrontation, revelation.</li>
+                        <li><strong>Post-Service Bars</strong> — Informal collision: intimacy, truth-telling, alliances.</li>
+                    </ul>
+                    <p><strong>Collision dynamics:</strong></p>
+                    <ul>
+                        <li><em>Elastic</em> — Cultural exchange where both sides expand knowledge.</li>
+                        <li><em>Inelastic</em> — Moments that absorb energy—injury, burnout, cultural friction.</li>
+                    </ul>
                 </div>
             </div>
+        </div>
 
-            <div class="collapsible operational">
-                <div class="collapsible-header">
-                    <div class="color-indicator"></div>
-                    4. Ukubona – Times / Observe
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <p><strong>What feedback loops emerge, and at what intervals?</strong></p>
-                        <ul>
-                            <li><strong>Tactical Loop (random)</strong> — Sudden market find changes filming plan.</li>
-                            <li><strong>Informational Loop (weekly)</strong> — Ritualized show segments (arrival → meal → reflection).</li>
-                            <li><strong>Strategic Loop (quarterly)</strong> — Location planning and thematic arcs.</li>
-                            <li><strong>Operational Loop (daily)</strong> — Travel → film → eat → write → repeat.</li>
-                            <li><strong>Existential Loop (long-term)</strong> — Health decline, loss of crew members, end of cultural practices.</li>
-                        </ul>
-                        <p><strong>Observation mode:</strong></p>
-                        <ul>
-                            <li>Monitor narrative arc entropy (how much chaos vs. order drives the day).</li>
-                            <li>Track agent fatigue vs. curiosity ratio over time.</li>
-                        </ul>
-                    </div>
+        <div class="collapsible operational">
+            <div class="collapsible-header">
+                <div class="color-indicator"></div> 4. Ukubona – Times / Observe
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>What feedback loops emerge, and at what intervals?</strong></p>
+                    <ul>
+                        <li><strong>Tactical</strong> — Sudden market find changes filming plan.</li>
+                        <li><strong>Informational</strong> — Ritualized show segments (arrival → meal → reflection).</li>
+                        <li><strong>Strategic</strong> — Location planning and thematic arcs.</li>
+                        <li><strong>Operational</strong> — Travel → film → eat → write → repeat.</li>
+                        <li><strong>Existential</strong> — Health decline, loss of crew members, end of cultural practices.</li>
+                    </ul>
+                    <p><strong>Observation mode:</strong> track narrative arc entropy and agent fatigue/curiosity ratio.</p>
                 </div>
             </div>
+        </div>
 
-            <div class="collapsible existential">
-                <div class="collapsible-header">
-                    <div class="color-indicator"></div>
-                    5. Ukukula – Delta (Growth / No-Growth / Recursion)
-                </div>
-                <div class="collapsible-content">
-                    <div class="collapsible-inner">
-                        <p><strong>How does the system change with each cycle?</strong></p>
-                        <ul>
-                            <li><strong>Growth Mode</strong> — Cultural empathy deepens, reach expands, cuisine knowledge diversifies.</li>
-                            <li><strong>No-Growth Mode</strong> — Burnout, repetition, reliance on formula.</li>
-                            <li><strong>Recursive Mode</strong> — Meta-awareness of the travel/food/document cycle becomes part of the narrative (Bourdain breaks the fourth wall).</li>
-                        </ul>
-                        <p><strong>Delta Outputs:</strong></p>
-                        <div class="json-block">{
+        <div class="collapsible existential">
+            <div class="collapsible-header">
+                <div class="color-indicator"></div> 5. Ukukula – Delta (Growth / No-Growth / Recursion)
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>How does the system change with each cycle?</strong></p>
+                    <ul>
+                        <li><strong>Growth</strong> — Cultural empathy deepens; reach expands.</li>
+                        <li><strong>No-Growth</strong> — Burnout, repetition, reliance on formula.</li>
+                        <li><strong>Recursive</strong> — Meta-awareness of the travel/food/document cycle.</li>
+                    </ul>
+                    <p><strong>Delta Outputs:</strong></p>
+                    <div class="json-block">{
   "empathy_index": +0.15,
   "burnout_index": -0.05,
   "audience_engagement": +0.2,
   "cultural_preservation_score": +0.3
 }</div>
-                    </div>
                 </div>
-            </div>
-        </div>
-
-        <hr>
-
-        <div id="section-c" class="section">
-            <h2>C — Why It's Virtually Impossible to Beat Bourdain</h2>
-            
-            <ul>
-                <li><strong>Timing & medium</strong> — He hit TV when long-form travel food storytelling was new, budgets were real, and global access was opening up—but before social media saturated everything. One voice could still become <em>the</em> voice.</li>
-                <li><strong>Writer first, chef second</strong> — The prose (Kitchen Confidential → Parts Unknown voiceovers) gave the shows literary bones. Most hosts cook; he <em>narrated the human condition</em>.</li>
-                <li><strong>Zero Point Zero craft</strong> — Cinematography, sound, and pacing were documentary-grade. It wasn't "food TV"; it was journalism with dinner.</li>
-                <li><strong>Radical empathy</strong> — He made episodes <em>about people, politics, and place</em>—the food was a bridge. That made the work age like reportage, not like a restaurant list.</li>
-                <li><strong>Cultural passport</strong> — His credibility opened doors (from war zones to tiny homes) that are now harder to enter or film with the same candor.</li>
-                <li><strong>Shared monoculture</strong> — Fewer platforms = bigger, deeper imprint. Today's fragmented audiences make "surpass him" in impact almost a category error.</li>
-                <li><strong>Myth + mortality</strong> — The story ended in a way that froze his influence in amber. You can match <em>quality</em>; you can't surpass <em>legend</em>.</li>
-            </ul>
-
-            <div class="conclusion">
-                <h3>Conclusion:</h3>
-                <p>A future travel-chef can excel on craft, ethics, or audience—but beating Bourdain on <strong>zeitgeist + reach + literary voice + trust</strong>? That's like trying to out-Hemingway Hemingway.</p>
             </div>
         </div>
     </div>
 
-    <script>
-        document.querySelectorAll('.collapsible-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                const isActive = content.classList.contains('active');
-                
-                // Close all other collapsibles
-                document.querySelectorAll('.collapsible-content').forEach(c => {
-                    c.classList.remove('active');
-                });
-                
-                // Toggle current one
-                if (!isActive) {
-                    content.classList.add('active');
-                }
+    <hr/>
+
+    <!-- ===== SECTION C ===== -->
+    <div id="section-c" class="section">
+        <h2>C — Why It's Virtually Impossible to Beat Bourdain</h2>
+        <ul>
+            <li><strong>Timing & medium</strong> — He hit TV when long-form travel food storytelling was new, budgets were real, and global access was opening up—but before social media saturation.</li>
+            <li><strong>Writer first, chef second</strong> — The prose gave the shows literary bones; he <em>narrated the human condition</em>.</li>
+            <li><strong>Zero Point Zero craft</strong> — Documentary-grade cinematography, sound, pacing.</li>
+            <li><strong>Radical empathy</strong> — Episodes about people, politics, place; food as bridge.</li>
+            <li><strong>Cultural passport</strong> — Access that’s harder to replicate now.</li>
+            <li><strong>Shared monoculture</strong> — Fewer platforms ⇒ deeper imprint.</li>
+            <li><strong>Myth + mortality</strong> — You can match quality; you can’t surpass legend.</li>
+        </ul>
+        <div class="conclusion">
+            <h3>Conclusion:</h3>
+            <p>A future travel-chef can excel on craft, ethics, or audience—but beating Bourdain on <strong>zeitgeist + reach + literary voice + trust</strong>? That’s like trying to out-Hemingway Hemingway.</p>
+        </div>
+    </div>
+
+    <hr/>
+
+    <!-- ===== SECTION D: Ratings Matrix ===== -->
+    <div id="section-d" class="section">
+        <h2>D — Ratings Matrix: Shows × Diet • Fitness • Games • Healthcare • Aging</h2>
+        <div class="helper">
+            Score each show on five axes — <strong>Diet</strong> (broad sensory diet), <strong>Fitness</strong>, <strong>Games</strong> (play, challenges, rule-sets), <strong>Healthcare</strong>, <strong>Aging</strong>.
+            <span class="pill">toggle scale</span><span class="pill">seed values</span><span class="pill">export JSON</span>
+        </div>
+
+        <div class="ratings-controls">
+            <label>
+                <span style="display:block;margin-bottom:6px;color:#9fb0a6;">Scale</span>
+                <select id="scaleSelect" class="select">
+                    <option value="10">1–10 (integers)</option>
+                    <option value="5">★ 1–5 (stars)</option>
+                </select>
+            </label>
+            <div style="display:flex;gap:10px;justify-content:flex-end;align-items:end;">
+                <button id="seedBtn" class="btn">Seed with suggested scores</button>
+                <button id="resetBtn" class="btn">Reset</button>
+                <button id="exportBtn" class="btn">Export JSON</button>
+            </div>
+        </div>
+
+        <div id="matrix"></div>
+
+        <div class="matrix-summary" id="summary"></div>
+        <div class="export-box" id="exportBox" style="display:none;"></div>
+    </div>
+</div>
+
+<script>
+/* ===== Collapsible behavior ===== */
+document.querySelectorAll('.collapsible-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isActive = content.classList.contains('active');
+        document.querySelectorAll('.collapsible-content').forEach(c => c.classList.remove('active'));
+        if (!isActive) content.classList.add('active');
+    });
+});
+
+/* ===== Ratings Matrix (Section D) ===== */
+const shows = [
+    { id: 'cooksTour', name: "A Cook's Tour" },
+    { id: 'noReservations', name: "No Reservations" },
+    { id: 'theLayover', name: "The Layover" },
+    { id: 'partsUnknown', name: "Parts Unknown" },
+    { id: 'theTaste', name: "The Taste" }
+];
+
+const metrics = [
+    { id: 'diet', name: 'Diet (sensory)' },
+    { id: 'fitness', name: 'Fitness' },
+    { id: 'games', name: 'Games' },
+    { id: 'healthcare', name: 'Healthcare' },
+    { id: 'aging', name: 'Aging' }
+];
+
+// Suggested seeds (my take; change freely). Scale = 1–10.
+const seed10 = {
+    cooksTour:   { diet: 9, fitness: 5, games: 6, healthcare: 4, aging: 4 },
+    noReservations:{ diet: 10, fitness: 5, games: 7, healthcare: 5, aging: 5 },
+    theLayover:  { diet: 7, fitness: 6, games: 6, healthcare: 3, aging: 3 },
+    partsUnknown:{ diet: 10, fitness: 5, games: 8, healthcare: 7, aging: 7 },
+    theTaste:    { diet: 6, fitness: 4, games: 8, healthcare: 2, aging: 2 }
+};
+
+let scaleMode = 10; // 10 or 5
+let state = {};     // { showId: { metricId: number (in current scale) } }
+
+function cloneSeedsToScale(scale) {
+    const out = {};
+    for (const s of shows) {
+        out[s.id] = {};
+        for (const m of metrics) {
+            const v10 = seed10[s.id][m.id];
+            out[s.id][m.id] = scale === 10 ? v10 : Math.max(1, Math.round(v10 / 2));
+        }
+    }
+    return out;
+}
+
+// Convert current state value (scaleMode) to 10-point normalized
+function toTen(val) { return scaleMode === 10 ? val : (val * 2); }
+// Convert 10-point to current scale
+function fromTen(val10) { return scaleMode === 10 ? val10 : Math.max(1, Math.round(val10 / 2)); }
+
+function makeStars(n) { return '★'.repeat(n) + '☆'.repeat(Math.max(0, 5 - n)); }
+
+function renderMatrix() {
+    const matrix = document.getElementById('matrix');
+    matrix.innerHTML = '';
+    for (const s of shows) {
+        const card = document.createElement('div');
+        card.className = 'ratings-card';
+
+        const avg = document.createElement('div');
+        avg.className = 'avg-line';
+        avg.innerHTML = `<span><h3 style="display:inline;">${s.name}</h3></span><span id="avg-${s.id}"></span>`;
+        card.appendChild(avg);
+
+        for (const m of metrics) {
+            const row = document.createElement('div');
+            row.className = 'metric-row';
+
+            const name = document.createElement('div');
+            name.className = 'metric-name';
+            name.textContent = m.name;
+
+            const input = document.createElement('input');
+            input.type = 'range';
+            input.min = 1;
+            input.max = scaleMode;
+            input.step = 1;
+            input.value = state[s.id]?.[m.id] ?? (scaleMode === 10 ? 5 : 3);
+            input.addEventListener('input', () => {
+                state[s.id][m.id] = parseInt(input.value, 10);
+                updateAverages();
+                updateExportBox(false);
+                valPill.textContent = input.value.padStart ? input.value.padStart(2,' ') : input.value;
+                starBox.textContent = scaleMode === 5 ? makeStars(parseInt(input.value,10)) : '';
             });
-        });
-    </script>
+
+            const valPill = document.createElement('div');
+            valPill.className = 'value-pill';
+            valPill.textContent = input.value;
+
+            const starBox = document.createElement('div');
+            starBox.className = 'stars';
+            starBox.textContent = scaleMode === 5 ? makeStars(parseInt(input.value,10)) : '';
+
+            row.appendChild(name);
+            row.appendChild(input);
+            row.appendChild(valPill);
+            row.appendChild(starBox);
+            card.appendChild(row);
+        }
+
+        matrix.appendChild(card);
+    }
+    updateAverages();
+}
+
+function updateAverages() {
+    // Per-show averages
+    for (const s of shows) {
+        let sum10 = 0;
+        for (const m of metrics) sum10 += toTen(state[s.id][m.id]);
+        const avg10 = sum10 / metrics.length;
+        const disp = scaleMode === 10 ? avg10.toFixed(1) : (Math.round(avg10/2)).toString() + '★';
+        const el = document.getElementById(`avg-${s.id}`);
+        if (el) el.textContent = `Average: ${disp}`;
+    }
+
+    // Totals/summary across shows (per metric)
+    const summary = document.getElementById('summary');
+    let html = `<div class="summary-grid">`;
+    for (const m of metrics) {
+        let sum10 = 0;
+        for (const s of shows) sum10 += toTen(state[s.id][m.id]);
+        const avg10 = sum10 / shows.length;
+        const display = scaleMode === 10 ? avg10.toFixed(1) : (Math.round(avg10/2)) + '★';
+        html += `<div class="summary-item"><span class="label">${m.name}</span><span class="num">${display}</span></div>`;
+    }
+    html += `</div>`;
+    summary.innerHTML = html;
+}
+
+function setScale(newScale) {
+    if (newScale === scaleMode) return;
+    // Convert existing values by normalizing to 10 then back to new scale
+    const next = {};
+    for (const s of shows) {
+        next[s.id] = {};
+        for (const m of metrics) {
+            const v10 = toTen(state[s.id][m.id]); // normalize current to 10
+            next[s.id][m.id] = newScale === 10 ? Math.round(v10) : Math.max(1, Math.round(v10 / 2));
+        }
+    }
+    scaleMode = newScale;
+    state = next;
+    renderMatrix();
+    updateExportBox(false);
+}
+
+function resetBlank() {
+    state = {};
+    for (const s of shows) {
+        state[s.id] = {};
+        for (const m of metrics) state[s.id][m.id] = (scaleMode===10 ? 5 : 3);
+    }
+    renderMatrix();
+    updateExportBox(false);
+}
+
+function seedValues() {
+    state = cloneSeedsToScale(scaleMode);
+    renderMatrix();
+    updateExportBox(false);
+}
+
+function buildExportObject() {
+    // Always export as 10-point canonical, plus echo chosen scale and display values
+    const canonical = {};
+    const display = {};
+    for (const s of shows) {
+        canonical[s.id] = {};
+        display[s.id] = {};
+        for (const m of metrics) {
+            canonical[s.id][m.id] = toTen(state[s.id][m.id]); // 10-point
+            display[s.id][m.id]   = state[s.id][m.id];        // current scale
+        }
+    }
+    return {
+        meta: {
+            scale_display: scaleMode,
+            metrics: metrics.map(x=>x.id),
+            shows: shows.map(x=>x.id),
+            timestamp: new Date().toISOString()
+        },
+        canonical_10pt: canonical,
+        display_values: display
+    };
+}
+
+function updateExportBox(showNow=true) {
+    const box = document.getElementById('exportBox');
+    const obj = buildExportObject();
+    box.textContent = JSON.stringify(obj, null, 2);
+    if (showNow) box.style.display = 'block';
+}
+
+document.getElementById('scaleSelect').addEventListener('change', (e) => {
+    setScale(parseInt(e.target.value, 10));
+});
+document.getElementById('resetBtn').addEventListener('click', resetBlank);
+document.getElementById('seedBtn').addEventListener('click', seedValues);
+document.getElementById('exportBtn').addEventListener('click', () => updateExportBox(true));
+
+// init
+state = cloneSeedsToScale(scaleMode);
+renderMatrix();
+updateExportBox(false);
+</script>
 </body>
 </html>
